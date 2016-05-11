@@ -385,7 +385,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
     CGFloat hudWidth = 100.0f;
     CGFloat hudHeight = 100.0f;
     CGFloat stringHeightBuffer = 20.0f;
-    CGFloat stringAndContentHeightBuffer = 80.0f;
+    CGFloat stringAndContentHeightBuffer = 100.0f;
     CGRect labelRect = CGRectZero;
     
     // Check if an image or progress ring is displayed
@@ -900,16 +900,16 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
             [strongSelf cancelIndefiniteAnimatedViewAnimation];
             
             // Update imageView
-            UIColor *tintColor = strongSelf.foregroundColorForStyle;
+//            UIColor *tintColor = strongSelf.foregroundColorForStyle;
             UIImage *tintedImage = image;
-            if([strongSelf.imageView respondsToSelector:@selector(setTintColor:)]) {
-                if (tintedImage.renderingMode != UIImageRenderingModeAlwaysTemplate) {
-                    tintedImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-                }
-                strongSelf.imageView.tintColor = tintColor;
-            } else {
-                tintedImage = [strongSelf image:image withTintColor:tintColor];
-            }
+//            if([strongSelf.imageView respondsToSelector:@selector(setTintColor:)]) {
+//                if (tintedImage.renderingMode != UIImageRenderingModeAlwaysTemplate) {
+//                    tintedImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//                }
+//                strongSelf.imageView.tintColor = tintColor;
+//            } else {
+//                tintedImage = [strongSelf image:image withTintColor:tintColor];
+//            }
             strongSelf.imageView.image = tintedImage;
             strongSelf.imageView.hidden = NO;
             
