@@ -428,12 +428,12 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
         if(stringWidth > hudWidth) {
             hudWidth = ceilf(stringWidth/2)*2;
         }
-        CGFloat labelRectY = (imageUsed || progressUsed) ? 68.0f : 9.0f;
+        CGFloat labelRectY = (imageUsed || progressUsed) ? 82.0f : 9.0f;
         if(hudHeight > 100.0f) {
-            labelRect = CGRectMake(12.0f, labelRectY, hudWidth, stringHeight);
-            hudWidth += 24.0f;
+            labelRect = CGRectMake(24.0f, labelRectY, hudWidth, stringHeight);
+            hudWidth += 48.0f;
         } else {
-            hudWidth += 24.0f;
+            hudWidth += 48.0f;
             labelRect = CGRectMake(0.0f, labelRectY, hudWidth, stringHeight);
         }
     }
@@ -444,7 +444,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
     [self updateBlurBounds];
     
     if(string) {
-        self.imageView.center = CGPointMake(CGRectGetWidth(self.hudView.bounds)/2, 36.0f);
+        self.imageView.center = CGPointMake(CGRectGetWidth(self.hudView.bounds)/2, 46.0f);
     } else {
        	self.imageView.center = CGPointMake(CGRectGetWidth(self.hudView.bounds)/2, CGRectGetHeight(self.hudView.bounds)/2);
     }
@@ -463,11 +463,11 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
             [indefiniteAnimationView sizeToFit];
         }
         
-        CGPoint center = CGPointMake((CGRectGetWidth(self.hudView.bounds)/2), 36.0f);
+        CGPoint center = CGPointMake((CGRectGetWidth(self.hudView.bounds)/2), 46.0f);
         self.indefiniteAnimatedView.center = center;
         
         if(self.progress != SVProgressHUDUndefinedProgress) {
-            self.backgroundRingView.center = self.ringView.center = CGPointMake((CGRectGetWidth(self.hudView.bounds)/2), 36.0f);
+            self.backgroundRingView.center = self.ringView.center = CGPointMake((CGRectGetWidth(self.hudView.bounds)/2), 46.0f);
         }
 	} else {
         if(self.defaultAnimationType == SVProgressHUDAnimationTypeFlat) {
@@ -1283,7 +1283,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
 
 - (UIImageView*)imageView {
     if(!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 28.0f, 28.0f)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 60.0f, 60.0f)];
     }
     if(!_imageView.superview) {
         [self.hudView addSubview:_imageView];
